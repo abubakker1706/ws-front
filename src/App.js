@@ -1,23 +1,22 @@
-import logo from './logo.svg';
-import './App.css';
+
+ import './App.css';
+import React,{useState} from 'react';
+import AmazonList from './components/AmazonList';
+import FlipkartList from './components/FlipkartList'
 
 function App() {
+  const [query,setQuery] = useState('')
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <input 
+                         type='text' 
+                         placeholder='Search mobile'
+                          onChange={(e)=>setQuery(e.target.value)} 
+                          className='input'/>
+     <div className='list'>
+    <AmazonList query={query} setQuery={setQuery}/>
+     <FlipkartList query={query} setQuery={setQuery}/>
+     </div>
     </div>
   );
 }
