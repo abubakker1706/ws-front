@@ -7,7 +7,7 @@ const FlipkartList =({query,setQuery})=>{
   const [flipkartdata,setFlipkartdata] =useState([])
   
   const flipkartData = () =>{
-                         fetch(`http://localhost:5001/flipkartdata?q=${query}`)
+                         fetch(`https://webscrappingnodejs.herokuapp.com/flipkartdata?q=${query}`)
                           .then(data =>data.json())
                          .then((product) =>setFlipkartdata(product))
                                                     

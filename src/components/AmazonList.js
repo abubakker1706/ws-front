@@ -13,7 +13,7 @@ const AmazonList=({query,setQuery})=>{
                          
                          const getData = () =>{
                                                  
-                                                  fetch(`http://localhost:5001/data?q=${query}`)
+                                                  fetch(`https://webscrappingnodejs.herokuapp.com/data?q=${query}`)
                                                   .then(data =>data.json())
                                                   .then((product) =>setData(product))
                          
